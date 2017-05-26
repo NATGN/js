@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #xia div{
+            display: inline-block;
+            background-color: red;
+            border: 3px solid pink;
+            margin: 0px 5px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var oText=document.getElementById('text');
+            var leftin=document.getElementById('leftin');
+            var leftout=document.getElementById('leftout');
+            var rightin=document.getElementById('rightin');
+            var rightout=document.getElementById('rightout');
+            var btn=document.getElementsByClassName('btn');
+            var xia=document.getElementById('xia');
+            var aLI=xia.getElementsByTagName('div');
+            function addrli(a,who) {
+                if (isNaN(a.value)||a.value==''){
+                    alert('请输入数字');
+                    a.value='';
+                    a.focus();
+                }
+                var note=document.createElement('div');
+                note.innerHTML=a.value;
+                if (!isNaN(a.value)&&a.value!=''){
+                    who.appendChild(note);
+                    note.onclick=function () {
+                        who.removeChild(this)
+                    }
+                }
+                a.value='';
+                a.focus();
+            }
+            function addlli(a,who) {
+                if (isNaN(a.value)||a.value==''){
+                    alert('请输入数字');
+                    a.value='';
+                    a.focus();
+                }
+                var note=document.createElement('div');
+                note.innerHTML=a.value;
+                if (!isNaN(a.value)&&a.value!=''){
+                    who.insertBefore(note,xia.childNodes[0]);
+                    note.onclick=function () {
+                        who.removeChild(this)
+                    }
+                }
+                a.value='';
+                a.focus();
+            }
+            btn[0].onclick=function () {
+                addlli(oText,xia);
+            };
+            btn[1].onclick=function () {
+                addrli(oText,xia)
+            };
+            btn[2].onclick=function () {
+                xia.removeChild(xia.childNodes[0]);
+            };
+            btn[3].onclick=function () {
+                xia.removeChild(aLI[aLI.length-1]);
+            };
+        }
+    </script>
+</head>
+<body>
+<input id="text" type="text">
+<button id="leftin" class="btn">左入</button>
+<button id="rightin" class="btn">右入</button>
+<button id="leftout" class="btn">左出</button>
+<button id="rightout" class="btn">右出</button>
+<div id="xia">
+
+</div>
+</body>
+</html>
