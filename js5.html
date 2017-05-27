@@ -23,7 +23,9 @@
             var xia=document.getElementById('xia');
             var aLI=xia.getElementsByTagName('div');
             var pai=document.getElementById('paixv');
+            var rset=document.getElementById('rset');
             var arry=[];
+            var reset=[]
             function addrli(a,who) {
                 if (isNaN(a.value)||a.value==''||a.value<10||a.value>100){
                     alert('请输入10-100的数字');
@@ -75,6 +77,9 @@
             };
 
             pai.onclick=function () {
+                for(var j=0;j<aLI.length;j++){
+                    reset[j]=aLI[j].offsetHeight;
+                }
                 for(var i=0;i<aLI.length;i++){
                     arry.length=aLI.length;
                     arry[i]=aLI[i].offsetHeight;
@@ -82,6 +87,11 @@
                 arry.sort();
                 for(var k=0;k<aLI.length;k++){
                     aLI[k].style.height=arry[k]+'px';
+                }
+            }
+            rset.onclick=function () {
+                for(var i=0;i<reset.length;i++){
+                    aLI[i].style.height=reset[i]+'px';
                 }
             }
         }
@@ -96,5 +106,6 @@
 <div id="xia">
 </div>
 <button id="paixv">排序</button>
+<button id="rset">复原</button>
 </body>
 </html>
