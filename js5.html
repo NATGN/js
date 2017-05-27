@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js5</title>
+    <style>
+        #xia div{
+            display: inline-block;
+            background-color: red;
+            /*border: 3px solid pink;*/
+            font-size: 20px;
+            margin-right: 3px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var oText=document.getElementById('text');
+            var leftin=document.getElementById('leftin');
+            var leftout=document.getElementById('leftout');
+            var rightin=document.getElementById('rightin');
+            var rightout=document.getElementById('rightout');
+            var btn=document.getElementsByClassName('btn');
+            var xia=document.getElementById('xia');
+            var aLI=xia.getElementsByTagName('div');
+            var pai=document.getElementById('paixv');
+            var arry=[];
+            function addrli(a,who) {
+                if (isNaN(a.value)||a.value==''||a.value<10||a.value>100){
+                    alert('请输入10-100的数字');
+                    a.value='';
+                    a.focus();
+                }
+                var note=document.createElement('div');
+                if (!isNaN(a.value)&&a.value!=''){
+                    who.appendChild(note);
+                    note.style.width=20+'px';
+                    note.style.height=a.value+'px';
+                    note.onclick=function () {
+                        who.removeChild(this)
+                    }
+                }
+                a.value='';
+                a.focus();
+            }
+            function addlli(a,who) {
+                if (isNaN(a.value)||a.value==''||a.value<10||a.value>100){
+                    alert('请输入10-100的数字');
+
+                    a.value='';
+                    a.focus();
+                }
+                var note=document.createElement('div');
+                if (!isNaN(a.value)&&a.value!=''){
+                    who.insertBefore(note,xia.childNodes[0]);
+                    note.style.width=20+'px';
+                    note.style.height=a.value+'px';
+                    note.onclick=function () {
+                        who.removeChild(this)
+                    }
+                }
+                a.value='';
+                a.focus();
+            }
+            btn[0].onclick=function () {
+                aLI.length<60?addlli(oText,xia):alert('最多输入60个数字');
+            };
+            btn[1].onclick=function () {
+                aLI.length<60?addrli(oText,xia):alert('最多输入60个数字');
+            };
+            btn[2].onclick=function () {
+                xia.removeChild(xia.childNodes[0]);
+            };
+            btn[3].onclick=function () {
+                xia.removeChild(aLI[aLI.length-1]);
+            };
+
+            pai.onclick=function () {
+                for(var i=0;i<aLI.length;i++){
+                    arry.length=aLI.length;
+                    arry[i]=aLI[i].offsetHeight;
+                }
+                arry.sort();
+                for(var k=0;k<aLI.length;k++){
+                    aLI[k].style.height=arry[k]+'px';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="text" type="text">
+<button id="leftin" class="btn">左入</button>
+<button id="rightin" class="btn">右入</button>
+<button id="leftout" class="btn">左出</button>
+<button id="rightout" class="btn">右出</button>
+<div id="xia">
+</div>
+<button id="paixv">排序</button>
+</body>
+</html>
