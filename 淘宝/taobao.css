@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+}
+html { overflow-x: hidden; overflow-y: auto; }
+#Nav{
+	font-family: 宋体;
+	height: 36px;background-color: #f5f5f5;width:100%;
+	font-size: 14px;
+	position: absolute;
+}
+#s-nav{
+	line-height: 21px;color:#3c3c3c;
+	margin: 0 76px;float: left;
+	overflow-x: hidden;
+}
+#s-nav ul{
+float: left;list-style: none
+}
+#ad li{
+	display: inline;
+	float: left;
+	line-height: 36px;
+	margin-right: 7px
+}
+.a{
+	color: #f22e00;text-decoration: none;
+	text-align: left;
+}
+
+a{
+	color:#6C6C6C;
+	text-decoration: none;
+}
+#ad{
+	width: 250px;
+	margin-left: 10px;
+}
+.dep li{
+	margin-right: 10px
+}
+span:hover{
+    color: #f40;
+}
+.sanhengxian{
+    color: #f40;
+}
+#ac{
+	width: 800px;
+	margin-left: 550px;
+	position: absolute;
+	display: block;
+	height: 36px;
+}
+#ac li{
+	display: inline;
+	float: left;
+	line-height: 36px;
+	margin-right: 10px
+}
+.wodetaobaoxia{
+	display: none;
+}
+.maijiazhongxinxia{
+	display: none;
+}
+.lianxikefuxia{
+	display: none;
+}
+.top{
+	height: 130px;
+	width: 100%;
+	position: absolute;
+	top:35px;
+}
+.logo{
+    margin-top: 39px;
+	margin-left: 102px;
+	width: 140px;
+	height: 60px;
+}
+.shouji{
+	margin-left: 12px;
+}
+.tab1{
+	font-family: 宋体;
+	height: 25px;
+	width: 150px;
+	line-height: 25px;
+	padding: 0;
+	margin: 0;
+	float: left;
+	position: absolute;
+	left: 345px;
+	top: 33px;
+	font-size: 14px;
+}
+.baobei{
+	float: left;
+	width: 50px;
+	height: 25px;
+	text-align: center;
+	background-color: #ff5400;
+	color: white;
+	line-height: 25px;
+	font-weight: bold;
+}
+.dianpu{
+	float: left;
+	width: 50px;
+	height: 25px;
+	text-align: center;
+	color: #ff5400;
+}
+.tianmao{
+	float: left;
+	width: 50px;
+	height: 25px;
+	text-align: center;
+	color: #ff5400;
+
+}
+#sousuo{
+	position: absolute;
+	height: 22px;
+/*	top:60px;*/
+	width: 470px;
+/*	left: 345px;*/
+    border:3px solid #ff5400;
+    padding: 6px 15px;
+    font-family: 宋体;
+    padding-right: 20px;
+    line-height: 20px;
+    top: 0px;
+}
+#sou{
+	height: 34px;
+	width: 1px;
+	top:58px;
+	left: 345px;
+	position: absolute;
+}
+.sou1{
+    position: absolute;
+    left: 480px;
+    top: 12px;
+}
+.sousuoanniu {
+    background-color: #ff5400;
+    height: 40px;
+    width: 120px;
+    position: absolute;
+    left: 510px;
+    border: none;
+    font-size: 20px;
+    font-family: 宋体;
+    font-weight: bolder;
+    color: white;
+}
+.sousuoanniu:hover{
+    cursor: pointer;
+}
+.gaojisousuo{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    font-size: 14px;
+    left:635px;
+    color: #555555;
+    line-height: 21px;
+}
+.gaojisousuo:hover{
+    color: #f40;
+    cursor: pointer;
+}
+#a{
+    height: 20px;
+    width: 620px;
+    position: absolute;
+    overflow: hidden;
+    left: 348px;
+}
+#demo1{
+    top:0px;
+    height: 25px;
+    width: 200px;
+    position: absolute;
+    font-size: 14px;
+}
+#demo2{
+    height: 25px;
+    width: 200px;
+    top:20px;
+    position: absolute;
+    font-size: 14px;
+}
+#one{
+    position: absolute;
+    height: 280px;
+    width: 520px;
+    left:0;
+}
+#two{
+    position: absolute;
+    height: 280px;
+    width: 520px;
+    left:520px;
+}
+#three{
+    position: absolute;
+    left:1040px;
+    height: 280px;
+    width: 520px;
+}
+#four{
+    position: absolute;
+    height: 280px;
+    width: 520px;
+    left:1560px;
+}
+#five{
+    position: absolute;
+    height: 280px;
+    width: 520px;
+    top: 100px;
+    left:520px;
+    /*display: none;*/
+    /*z-index: 10;*/
+    /*left:2600px;*/
+}
+#pic2{
+    position: absolute;;
+    top: 100px;
+    left: 0px;
+    height: 280px;
+    width: 3000px;
+    font-size: 0px;
+    float: left;
+    /*overflow: hidden;*/
+}
+#all1{
+    position: absolute;
+    overflow: hidden;
+    width: 520px;
+    top: 110px;
+    left:280px;
+    height: 400px;
+}
