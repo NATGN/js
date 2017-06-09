@@ -17,14 +17,15 @@
     <script>
         window.onload = function() {
             var oText = document.getElementById('text');
-
             var btn = document.getElementsByClassName('btn');
             var xia = document.getElementById('xia');
             var aLI = xia.getElementsByTagName('li');
-            var ainput=document.getElementById('ainput');
-            var seacher=document.getElementById("seacher");
-            var seavalue=ainput.value;
-
+            var asd=document.getElementById("as");
+            var btn1=document.getElementById("btn");
+            var assdf=asd.value;
+            var assdfa=assdf.toString();
+            var dx=[];
+            var dc=[];
             function addrli(a, who) {
                 if (a.value === '') {
                     alert('写点什么吧');
@@ -76,18 +77,21 @@
             btn[3].onclick = function() {
                 xia.removeChild(xia.childNodes[aLI.length - 1]);
             };
-            seacher.onclick=function () {
+            btn1.onclick=function () {
 
                 for(var i=0;i<aLI.length;i++){
-//                    aLI[i].innerHTML.indexOf(seavalue)>=0?aLI[i].style.backgroundColor="yellow"
-                    aLI[i].style.backgroundColor="red";
-                    var dx=aLI[i].innerHTML.indexOf(seavalue);
-                    if (dx!==-1){
-                        aLI[i].style.backgroundColor="yellow"
+                    aLI[i].style.backgroundColor='red';
+                    aLI[i].id="item"+i;
+                    var li=document.getElementById("item"+i);
+                    var note=li.innerHTML;
+                    dx.push(li.innerHTML);
+                }
+                for(var j=0;j<dx.length;j++){
+                    if (dx[j].toString().indexOf(asd.value)>-1){
+                        aLI[j].style.backgroundColor="yellow"
                     }
                 }
-//                var index=ovalue.indexOf(seavalue);
-//                alert(index)
+                dx=[];
             }
         }
 
@@ -97,13 +101,13 @@
 <body>
 <!--<input id="text" type="text">-->
 <textarea id="text"></textarea>
-<button id="leftin" class="btn">左入</button>
-<button id="rightin" class="btn">右入</button>
-<button id="leftout" class="btn">左出</button>
-<button id="rightout" class="btn">右出</button>
+<button class="btn">左入</button>
+<button class="btn">右入</button>
+<button class="btn">左出</button>
+<button class="btn">右出</button>
 <br>
-<input id="ainput" type="text">
-<button id="seacher">查询</button>
+<input id="as" type="text">
+<button id="btn">pipei</button>
 <ul id="xia"></ul>
 </body>
 
