@@ -17,11 +17,14 @@
     <script>
         window.onload = function() {
             var oText = document.getElementById('text');
+
             var btn = document.getElementsByClassName('btn');
             var xia = document.getElementById('xia');
             var aLI = xia.getElementsByTagName('li');
             var ainput=document.getElementById('ainput');
             var seacher=document.getElementById("seacher");
+            var seavalue=ainput.value;
+
             function addrli(a, who) {
                 if (a.value === '') {
                     alert('写点什么吧');
@@ -30,7 +33,7 @@
                 }
                 var note = [];
                 var avalue = a.value;
-                var ac = avalue.split("," && "，" && "/" && "/" && "." && "。" && "~" && "·" && " " && "`" && /\s/&&";"&&"；");
+                var ac = avalue.split("," && "，" && "/" && "/" && "." && "。" && "~" && "·" && " " && "`" && /\s/);
                 for (var i = 0; i < ac.length; i++) {
                     note[i] = document.createElement('li');
                     note[i].innerHTML = ac[i];
@@ -50,7 +53,7 @@
                 }
                 var note = [];
                 var avalue = a.value;
-                var ac = avalue.split("," && "，" && "/" && "/" && "." && "。" && "~" && "·" && " " && "`" && /\s/&&";"&&"；");
+                var ac = avalue.split("," && "，" && "/" && "/" && "." && "。" && "~" && "·" && " " && "`" && /\s/);
                 for (var i = 0; i < ac.length; i++) {
                     note[i] = document.createElement('li');
                     note[i].innerHTML = ac[i];
@@ -74,7 +77,17 @@
                 xia.removeChild(xia.childNodes[aLI.length - 1]);
             };
             seacher.onclick=function () {
-                var seavalue=ainput.value;
+
+                for(var i=0;i<aLI.length;i++){
+//                    aLI[i].innerHTML.indexOf(seavalue)>=0?aLI[i].style.backgroundColor="yellow"
+                    aLI[i].style.backgroundColor="red";
+                    var dx=aLI[i].innerHTML.indexOf(seavalue);
+                    if (dx!==-1){
+                        aLI[i].style.backgroundColor="yellow"
+                    }
+                }
+//                var index=ovalue.indexOf(seavalue);
+//                alert(index)
             }
         }
 
