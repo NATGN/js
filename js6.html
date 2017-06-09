@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #xia li {
+            list-style: none;
+            display: inline-block;
+            background-color: red;
+            border: 3px solid pink;
+            margin: 0 5px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oText = document.getElementById('text');
+            var btn = document.getElementsByClassName('btn');
+            var xia = document.getElementById('xia');
+            var aLI = xia.getElementsByTagName('li');
+            var ainput=document.getElementById('ainput');
+            var seacher=document.getElementById("seacher");
+            function addrli(a, who) {
+                if (a.value === '') {
+                    alert('写点什么吧');
+                    a.value = '';
+                    a.focus();
+                }
+                var note = [];
+                var avalue = a.value;
+                var ac = avalue.split("," && "，" && "/" && "/" && "." && "。" && "~" && "·" && " " && "`" && /\s/&&";"&&"；");
+                for (var i = 0; i < ac.length; i++) {
+                    note[i] = document.createElement('li');
+                    note[i].innerHTML = ac[i];
+                    if (a.value !=='') {
+                        who.appendChild(note[i])
+                    }
+                }
+                a.value = '';
+                a.focus();
+            }
+
+            function addlli(a, who) {
+                if (a.value ==='') {
+                    alert('写点什么吧');
+                    a.value = '';
+                    a.focus();
+                }
+                var note = [];
+                var avalue = a.value;
+                var ac = avalue.split("," && "，" && "/" && "/" && "." && "。" && "~" && "·" && " " && "`" && /\s/&&";"&&"；");
+                for (var i = 0; i < ac.length; i++) {
+                    note[i] = document.createElement('li');
+                    note[i].innerHTML = ac[i];
+                    if (a.value !== '') {
+                        who.insertBefore(note[i], aLI[0]);
+                    }
+                }
+                a.value = '';
+                a.focus();
+            }
+            btn[0].onclick = function() {
+                addlli(oText, xia);
+            };
+            btn[1].onclick = function() {
+                addrli(oText, xia)
+            };
+            btn[2].onclick = function() {
+                xia.removeChild(xia.childNodes[0]);
+            };
+            btn[3].onclick = function() {
+                xia.removeChild(xia.childNodes[aLI.length - 1]);
+            };
+            seacher.onclick=function () {
+                var seavalue=ainput.value;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<!--<input id="text" type="text">-->
+<textarea id="text"></textarea>
+<button id="leftin" class="btn">左入</button>
+<button id="rightin" class="btn">右入</button>
+<button id="leftout" class="btn">左出</button>
+<button id="rightout" class="btn">右出</button>
+<br>
+<input id="ainput" type="text">
+<button id="seacher">查询</button>
+<ul id="xia"></ul>
+</body>
+
+</html>
