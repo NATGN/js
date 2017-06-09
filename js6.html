@@ -22,10 +22,7 @@
             var aLI = xia.getElementsByTagName('li');
             var asd=document.getElementById("as");
             var btn1=document.getElementById("btn");
-            var assdf=asd.value;
-            var assdfa=assdf.toString();
             var dx=[];
-            var dc=[];
             function addrli(a, who) {
                 if (a.value === '') {
                     alert('写点什么吧');
@@ -78,7 +75,6 @@
                 xia.removeChild(xia.childNodes[aLI.length - 1]);
             };
             btn1.onclick=function () {
-
                 for(var i=0;i<aLI.length;i++){
                     aLI[i].style.backgroundColor='red';
                     aLI[i].id="item"+i;
@@ -92,6 +88,7 @@
                     }
                 }
                 dx=[];
+                asd.value=''
             }
         }
 
