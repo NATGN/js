@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#nav {
+    margin: 0 auto;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(107, 155, 184);
+}
+
+#page {
+    left: -250px;
+    position: relative;
+    top: -80px;
+    padding-right: 100px;
+    height: 200px;
+}
+
+.aul li {
+    height: 60px;
+    width: 80px;
+    color: black;
+    list-style: none;
+    float: left;
+    left: 400px;
+    padding-right: 40px;
+    position: relative;
+}
+
+a {
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    color: black;
+    width: auto;
+    height: 20px;
+}
+
+#touxiang {
+    height: 0;
+    list-style: none;
+}
+
+#touxiangid {
+    border-radius: 100%;
+    position: relative;
+    top: -55px;
+    right: -1100px;
+}
+
+#down1 {
+    position: relative;
+    right: -1100px;
+    top: -70px;
+}
+
+#up1 {
+    position: relative;
+    right: -1100px;
+    top: -70px;
+    display: none;
+}
+
+.weixin {
+    z-index: 3;
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    top: 60px;
+    right: 115px;
+    transition: 2s;
+    opacity: 0;
+}
+
+#lunbotu {
+    z-index: 1;
+    position: relative;
+}
+
+#lunbotu img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 2s;
+}
